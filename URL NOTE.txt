@@ -1,21 +1,21 @@
-1: js »ñÈ¡url ²ÎÊı
+1: js è·å–url å‚æ•°
 
-	1.1 ´Ë·½·¨ Ó¢ÎÄÊı×Ö»ò·ûºÅ×Ö·ûÃ»ÓĞÎÊÌâ
-	function getQueryString(name) {
-		var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-		var r = window.location.search.substr(1).match(reg);
-		if (r != null) {
-			return unescape(r[2]);
-		}
-		return null;
+1.1 æ­¤æ–¹æ³• è‹±æ–‡æ•°å­—æˆ–ç¬¦å·å­—ç¬¦æ²¡æœ‰é—®é¢˜
+function getQueryString(name) {
+	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+	var r = window.location.search.substr(1).match(reg);
+	if (r != null) {
+		return unescape(r[2]);
 	}
+	return null;
+}
 
-	1.2 ´Ë·½·¨ Ó¢ÎÄÊı×Ö»ò·ûºÅ×Ö·û, ÖĞÎÄ¶¼Ã»ÓĞÎÊÌâ
-	function getQueryString(name) {
-		var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-		var r = window.location.search.substr(1).match(reg);
-		if (r != null) {
-			return decodeURI(r[2]);
-		}
-		return null;
+1.2 æ­¤æ–¹æ³• è‹±æ–‡æ•°å­—æˆ–ç¬¦å·å­—ç¬¦, ä¸­æ–‡éƒ½æ²¡æœ‰é—®é¢˜
+function getQueryString(name) {
+	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+	var r = window.location.search.substr(1).match(reg);
+	if (r != null) {
+		return decodeURI(r[2]);
 	}
+	return null;
+}
