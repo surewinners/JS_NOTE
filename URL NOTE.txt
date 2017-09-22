@@ -1,0 +1,21 @@
+1: js 获取url 参数
+
+	1.1 此方法 英文数字或符号字符没有问题
+	function getQueryString(name) {
+		var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+		var r = window.location.search.substr(1).match(reg);
+		if (r != null) {
+			return unescape(r[2]);
+		}
+		return null;
+	}
+
+	1.2 此方法 英文数字或符号字符, 中文都没有问题
+	function getQueryString(name) {
+		var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+		var r = window.location.search.substr(1).match(reg);
+		if (r != null) {
+			return decodeURI(r[2]);
+		}
+		return null;
+	}
